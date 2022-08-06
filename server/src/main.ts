@@ -21,7 +21,7 @@ async function bootstrap() {
     `🟢 Listening on port ${port}, BUILD_TYPE=${process.env.BUILD_TYPE}`,
     'Main',
   );
-
+  app.enableCors();
   await app.listen(port);
 }
 bootstrap();
