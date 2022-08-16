@@ -2,6 +2,7 @@ import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
+import  * as Open  from 'open';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config({ path: join(process.env.PWD, '../../.env') });
@@ -23,5 +24,6 @@ async function bootstrap() {
   );
   app.enableCors();
   await app.listen(port);
+  await Open('http://localhost:3000');
 }
 bootstrap();
