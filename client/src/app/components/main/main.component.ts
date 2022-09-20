@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IQuestion } from '../../models/IQuestion';
+import { ITemplate } from '../../models/ITemplate';
 import { MainService } from '../../services/main.service';
 
 @Component({
@@ -7,17 +7,19 @@ import { MainService } from '../../services/main.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
 
-  questions:IQuestion[]=[];
+  templates:ITemplate[]=[];
+  selectedTemplate!:ITemplate;
   constructor(private srv: MainService) { }
 
-
-  getQuestions(){
-    this.srv.getQuestionsList().subscribe(res =>{
-      this.questions = res;
+  ngOnInit(): void {
+    this.srv.getTemplatesList().subscribe(res =>{
+      this.templates = res;
     })
   }
 
-
+  templateClick(template : ITemplate): void{
+    this.selectedTemplate = template;
+  }
 }

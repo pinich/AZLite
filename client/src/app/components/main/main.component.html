@@ -1,6 +1,17 @@
 <div class="mainCLS">
-  <h1>Sample app</h1>
+  <h1>Azure Lite</h1>
   <div>
-    <button class="btn btn-primary" (click)="getQuestions()">Load Questions</button>
+    <a class="btn btn-primary" routerLink="/quiz">Create a new template</a>
+  </div>
+  <div *ngIf="templates && templates.length > 0">
+    <div *ngFor="let template of templates" (click)="templateClick(template)" >
+      {{template.title}}
+    </div>
+  </div>
+  <div *ngIf="selectedTemplate">
+    <h3>{{selectedTemplate.title}}</h3>
+    <p>{{selectedTemplate.description}}</p>
+    <img [src] = "selectedTemplate.image"/>
+    <button class="btn btn-primary"> Download template file</button>
   </div>
 </div>

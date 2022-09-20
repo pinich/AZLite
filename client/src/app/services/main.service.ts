@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { IQuestion } from '../models/IQuestion';
+import { ITemplate } from '../models/ITemplate';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,5 +16,10 @@ export class MainService {
   public getQuestionsList(): Observable<IQuestion[]> {
     const path = environment.quizDataPath;
     return this.http.get<IQuestion[]>(path);
+  }
+
+  public getTemplatesList(): Observable<ITemplate[]> {
+    const path = environment.templateDataPath;
+    return this.http.get<ITemplate[]>(path);
   }
 }

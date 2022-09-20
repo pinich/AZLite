@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   serverAPI: 'http://localhost:3000',
-  quizDataPath: '/assets/quizData.json'
+  quizDataPath: '/assets/quizData.json',
+  templateDataPath: '/assets/templatesData.json'
 };
 
 /*
