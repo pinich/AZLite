@@ -1,6 +1,6 @@
 <div class="container">
-  <h2>Azure Light user presences</h2>
-  <p>Please answerer on the following question and press submit.</p>
+  <h2>Azure Lite user presences</h2>
+  <p>Please answer the following question and press submit.</p>
   <div *ngIf="questions && questions.length > 0">
 
     <div class="row mb-3" *ngFor="let question of questions">
@@ -10,7 +10,7 @@
             <label class="input-group-text" for="inputGroupSelect01">{{question.title}}</label>
           </div>
           <select class="custom-select" id="inputGroupSelect01">
-            <option *ngFor="let option of question.options" [value]="option">{{option}}</option>
+            <option *ngFor="let option of question.options" [value]="option.id">{{option.title}}</option>
           </select>
         </div>
       </div>
