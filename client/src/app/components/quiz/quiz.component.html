@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Azure Light user presences</h2>
+  <p>Please answerer on the following question and press submit.</p>
+  <div *ngIf="questions && questions.length > 0">
+
+    <div class="row mb-3" *ngFor="let question of questions">
+      <div class="col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">{{question.title}}</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option *ngFor="let option of question.options" [value]="option">{{option}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </div>
+</div>

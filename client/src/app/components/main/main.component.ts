@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IQuestion } from '../../models/IQuestion';
 import { MainService } from '../../services/main.service';
 
 @Component({
@@ -8,13 +9,14 @@ import { MainService } from '../../services/main.service';
 })
 export class MainComponent {
 
-  resultData = { msg: '', date: '' };
+  questions:IQuestion[]=[];
   constructor(private srv: MainService) { }
 
-  getHelloWorld() {
-    this.srv.getHelloWorld().subscribe(res => {
-      this.resultData = res;
-    });
+
+  getQuestions(){
+    this.srv.getQuestionsList().subscribe(res =>{
+      this.questions = res;
+    })
   }
 
 
