@@ -1,7 +1,17 @@
 <div class="container">
-  <h2>Azure Lite user presences</h2>
+  <h2>Create your new Azure environment</h2>
   <p>Please answer the following question and press submit.</p>
-  <div *ngIf="questions && questions.length > 0">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupQuestionType">Please select Azure Environment</label>
+    </div>
+    <select #selectedType class="custom-select" id="inputGroupQuestionType" (change)="changeQuestionsType(selectedType.value)">
+      <option value="test">Test Environment</option>
+      <option value="prod">Production Environment</option>
+      <option value="customProd">Custom Production Environment</option>
+    </select>
+  </div>
+  <div *ngIf="questions">
     <div class="row mb-3" *ngFor="let question of questions">
       <div class="col-6">
         <div class="input-group mb-3">

@@ -8,14 +8,14 @@
     },
     {
         "id": 1,
-        "title": "Template2",
+        "title": "Template 2",
         "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eveniet, vero, quis officiis dicta ipsum fugit optio tempora ex illo delectus nesciunt impedit adipisci ratione veritatis animi repellendus? Molestias, labore!",
         "image": "/assets/images/template1Image.png",
         "filePath": "/assets/images/template1Image.png"
     },
     {
         "id": 2,
-        "title": "Template3",
+        "title": "Template 3",
         "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eveniet, vero, quis officiis dicta ipsum fugit optio tempora ex illo delectus nesciunt impedit adipisci ratione veritatis animi repellendus? Molestias, labore!",
         "image": "/assets/images/template1Image.png",
         "filePath": "/assets/images/template1Image.png"

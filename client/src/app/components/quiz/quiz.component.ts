@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IQuestion } from '../../models/IQuestion';
 import { MainService } from 'src/app/services/main.service';
+import { IQuestionsResponse } from 'src/app/models/IQuestionsResponse';
 
 @Component({
   selector: 'app-quiz',
@@ -9,17 +10,43 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class QuizComponent implements OnInit {
 
-  questions: IQuestion[] = [];
+  questions!: IQuestion[];
+  allQuestions!: IQuestionsResponse;
   templateGenerated: boolean = false;
   constructor(private srv: MainService) { }
 
   ngOnInit(): void {
     this.srv.getQuestionsList().subscribe(res => {
-      this.questions = res;
+      this.allQuestions = res;
+      this.questions = this.allQuestions.testQuestions;
     })
   }
 
   submitClick(): void {
     this.templateGenerated = true;
+  }
+
+  /**
+   * test = testQuestions
+   * prod = productionQuestions
+   * customProd = customProdQuestions
+   * @param questionType
+   */
+  changeQuestionsType(questionType: string): void {
+    switch (questionType) {
+      case "test":
+        this.questions = this.allQuestions.testQuestions;
+        break;
+      case "prod":
+        this.questions = this.allQuestions.productionQuestions;
+        break;
+      case "customProd":
+        this.questions = this.allQuestions.customProdQuestions;
+        break;
+      default:
+        this.questions = this.allQuestions.testQuestions;
+        break;
+    }
+
   }
 }
