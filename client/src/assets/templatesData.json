@@ -2,8 +2,8 @@
     {
         "id": 0,
         "title": "Web Application + Blob stroage",
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eveniet, vero, quis officiis dicta ipsum fugit optio tempora ex illo delectus nesciunt impedit adipisci ratione veritatis animi repellendus? Molestias, labore!        ",
-        "image": "/assets/images/template1Image.png",
+        "description": "Deploying secure applications using the Azure App Service Environment. To restrict application access from the internet, the Azure Application Gateway service and Azure Web Application Firewall are used. This template also provides guidance about continuous integration and continuous deployment (CI/CD) for App Service Environments using Github.        ",
+        "image": "/assets/images/fully-managed-secure-apps.png",
         "filePath": "/assets/templates/template1.json"
     },
     {
