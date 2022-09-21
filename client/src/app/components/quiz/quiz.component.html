@@ -2,7 +2,6 @@
   <h2>Azure Lite user presences</h2>
   <p>Please answer the following question and press submit.</p>
   <div *ngIf="questions && questions.length > 0">
-
     <div class="row mb-3" *ngFor="let question of questions">
       <div class="col-6">
         <div class="input-group mb-3">
@@ -15,7 +14,14 @@
         </div>
       </div>
     </div>
-    <a class="btn btn-secondary" routerLink="/home">Go back to home page</a>
-    <button class="btn btn-primary">Submit</button>
+    <a class="btn btn-secondary bottom-btn" routerLink="/home">Go back to home page</a>
+    <button class="btn btn-primary bottom-btn" (click)=submitClick()>Generate me a new template</button>
+  </div>
+  <div *ngIf="templateGenerated">
+    <h5>Generated template is:</h5>
+    <div class="row">
+      <img src="/assets/images/template1Image.png" class="image-style" />
+    </div>
+    <a class="btn btn-primary bottom-btn" routerLink="/home">Continue with generated template</a>
   </div>
 </div>

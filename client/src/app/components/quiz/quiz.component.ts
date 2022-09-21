@@ -10,6 +10,7 @@ import { MainService } from 'src/app/services/main.service';
 export class QuizComponent implements OnInit {
 
   questions: IQuestion[] = [];
+  templateGenerated: boolean = false;
   constructor(private srv: MainService) { }
 
   ngOnInit(): void {
@@ -18,4 +19,7 @@ export class QuizComponent implements OnInit {
     })
   }
 
+  submitClick(): void {
+    this.templateGenerated = true;
+  }
 }
