@@ -1,7 +1,7 @@
 <div class="mainCLS">
   <div class="container">
     <div class="row">
-      <div class="col right-border" >
+      <div class="col right-border">
         <div>
           <h3>Welcome to Azure Lite - Production in a box.</h3>
           <h4>What would you like to do today?</h4>
@@ -9,12 +9,10 @@
           <a class="btn btn-primary top-btn" routerLink="/quiz">Create a new template</a>
         </div>
         <div *ngIf="templates && templates.length > 0">
-          <!-- <div *ngFor="let template of templates" (click)="templateClick(template)">
-            {{template.title}}
-          </div> -->
           <h5>Available templates:</h5>
           <select class="form-select" size="6">
-            <option class="template-class" *ngFor="let template of templates" (click)="templateClick(template)">{{template.title}}</option>
+            <option class="template-class" *ngFor="let template of templates" (click)="templateClick(template)">
+              {{template.title}}</option>
           </select>
         </div>
       </div>
@@ -24,7 +22,8 @@
           <div class="container">
             <p>{{selectedTemplate.description}}</p>
             <img [src]="selectedTemplate.image" class="image-style" />
-            <button class="btn btn-primary bottom-btn"> Download template file</button>
+            <button class="btn btn-primary bottom-btn"
+              (click)="downloadFile(selectedTemplate.filePath,selectedTemplate.title)">Download template file</button>
           </div>
         </div>
       </div>

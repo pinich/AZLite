@@ -9,17 +9,21 @@ import { MainService } from '../../services/main.service';
 })
 export class MainComponent implements OnInit {
 
-  templates:ITemplate[]=[];
-  selectedTemplate!:ITemplate;
+  templates: ITemplate[] = [];
+  selectedTemplate!: ITemplate;
   constructor(private srv: MainService) { }
 
   ngOnInit(): void {
-    this.srv.getTemplatesList().subscribe(res =>{
+    this.srv.getTemplatesList().subscribe(res => {
       this.templates = res;
     })
   }
 
-  templateClick(template : ITemplate): void{
+  templateClick(template: ITemplate): void {
     this.selectedTemplate = template;
+  }
+
+  downloadFile(filePath: string, fileTitle: string) {
+    this.srv.downloadFile(filePath, fileTitle);
   }
 }
