@@ -21,7 +21,7 @@
           <h3>{{selectedTemplate.title}}</h3>
           <div class="container">
             <p>{{selectedTemplate.description}}</p>
-            <img [src]="selectedTemplate.image" class="image-style" />
+            <img [src]="getImageUrl(selectedTemplate.image)" class="image-style" />
             <button class="btn btn-primary bottom-btn"
               (click)="downloadFile(selectedTemplate.filePath,selectedTemplate.title)">Download template file</button>
           </div>

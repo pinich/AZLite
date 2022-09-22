@@ -6,7 +6,7 @@
       <label class="input-group-text" for="inputGroupQuestionType">Please select Azure Environment</label>
     </div>
     <select #selectedType class="custom-select" id="inputGroupQuestionType" (change)="changeQuestionsType(selectedType.value)">
-      <option value="test">Test Environment</option>
+      <!-- <option value="test">Test Environment</option> -->
       <option value="prod">Production Environment</option>
       <option value="customProd">Custom Production Environment</option>
     </select>
@@ -30,7 +30,7 @@
   <div *ngIf="templateGenerated">
     <h5>Generated template is:</h5>
     <div class="row">
-      <img src="/assets/images/fully-managed-secure-apps.png" class="image-style" />
+      <img [src]="getImageUrl('/assets/images/fully-managed-secure-apps.png')" class="image-style" />
     </div>
     <a class="btn btn-primary bottom-btn" routerLink="/home">Continue with generated template</a>
   </div>

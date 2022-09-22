@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverAPI: 'http://localhost:3000',
+  serverAPI: '',
   quizDataPath: '/assets/quizData.json',
   templateDataPath: '/assets/templatesData.json'
 };

@@ -1,17 +1,20 @@
 
 ## Installation instructions
+
+The app can be accessed with the following URL : [https://pinich.github.io/AZLite](https://pinich.github.io/AZLite)
+
 ## Using installation script
 Execute `./scripts/installation.sh` file.
 ## Manual installation
 #### Step 1
 ```bash
 cd client && npm i
-cd ../server && npm i
 ```
 #### Step 2
-Create .env file in parent of the project directory.
-Fill and adjust .env file contents according to .env.sample file
-#### Step 3
-Build client and server by cd into server directory and then running : `npm run build:all`
-#### Step 4
 To start the server with static client run `npm run start` from server directory
+
+## Deployment
+To deploy the app to Github-Pages run the following command from client directory:
+```bash
+npm run deploy
+```

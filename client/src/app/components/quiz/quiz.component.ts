@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IQuestion } from '../../models/IQuestion';
 import { MainService } from 'src/app/services/main.service';
 import { IQuestionsResponse } from 'src/app/models/IQuestionsResponse';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-quiz',
@@ -18,7 +19,7 @@ export class QuizComponent implements OnInit {
   ngOnInit(): void {
     this.srv.getQuestionsList().subscribe(res => {
       this.allQuestions = res;
-      this.questions = this.allQuestions.testQuestions;
+      this.questions = this.allQuestions.productionQuestions;
     })
   }
 
@@ -48,5 +49,9 @@ export class QuizComponent implements OnInit {
         break;
     }
 
+  }
+
+  getImageUrl(imagePath:string):string {
+    return environment.serverAPI + imagePath;
   }
 }

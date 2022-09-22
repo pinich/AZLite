@@ -14,16 +14,17 @@ export class MainService {
 
 
   public getQuestionsList(): Observable<IQuestionsResponse> {
-    const path = environment.quizDataPath;
+    const path = environment.serverAPI + environment.quizDataPath;
     return this.http.get<IQuestionsResponse>(path);
   }
 
   public getTemplatesList(): Observable<ITemplate[]> {
-    const path = environment.templateDataPath;
+    const path = environment.serverAPI + environment.templateDataPath;
     return this.http.get<ITemplate[]>(path);
   }
 
-  public downloadFile(url: string, fileTitle: string) {
+  public downloadFile(filePath: string, fileTitle: string) {
+    const url = environment.serverAPI + filePath;
     return this.http
       .get(url, {
         responseType: 'blob',

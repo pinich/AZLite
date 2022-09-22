@@ -1,6 +1,6 @@
 # Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+The app can be accessed with the following URL : [https://pinich.github.io/AZLite](https://pinich.github.io/AZLite)
 
 ## Development server
 

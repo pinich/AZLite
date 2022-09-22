@@ -5,8 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:dev": "ng build --configuration=dev --outputHashing=all",
-    "build:prod": "ng build --configuration=production --outputHashing=all",
+    "build:dev": "ng build --configuration=dev",
+    "predeploy": "ng build --configuration=production --base-href=https://pinich.github.io/AZLite --deploy-url=https://pinich.github.io/AZLite/",
+    "deploy": "npx angular-cli-ghpages --dir=dist/client",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,

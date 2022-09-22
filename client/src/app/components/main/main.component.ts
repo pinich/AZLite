@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { ITemplate } from '../../models/ITemplate';
 import { MainService } from '../../services/main.service';
 
@@ -25,5 +26,9 @@ export class MainComponent implements OnInit {
 
   downloadFile(filePath: string, fileTitle: string) {
     this.srv.downloadFile(filePath, fileTitle);
+  }
+
+  getImageUrl(imagePath:string):string {
+    return environment.serverAPI + imagePath;
   }
 }

@@ -1,5 +1,4 @@
 {
-  
   "productionQuestions": [
     {
       "id": 0,
@@ -13,7 +12,6 @@
           "id": 2,
           "title": "HPC workload"
         }
-   
       ]
     },
     {
@@ -28,7 +26,6 @@
           "id": 2,
           "title": "No"
         }
- 
       ]
     },
     {
@@ -43,7 +40,6 @@
           "id": 2,
           "title": "No"
         }
- 
       ]
     },
     {
@@ -58,7 +54,6 @@
           "id": 2,
           "title": "No"
         }
- 
       ]
     }
   ],
